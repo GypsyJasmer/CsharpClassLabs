@@ -1,0 +1,117 @@
+Design and implement a programming solution to each of the following problems:
+
+1. Design and implement a program that asks the user to enter a number and determines if the number entered is a perfect number.  
+A perfect number is a number that is equal to the sum of its factors excluding the number itself.  
+6 is a perfect number because 1 + 2 + 3 = 6. 28 is the next perfect number.  Do this problem in dotnetfiddle.
+Math
+8/1 8/2 8/3 8/4 8/5 8/6 8/7 8/8
+sum = 1+2+4=7
+8 is not a perfect #
+
+Input:
+-uNum
+
+Output:
+-if uNum is a perfect number "Yes" +uNum " is a perfect #"
+
+Algorithm:
+-display instructions
+-get Input
+-count = 1
+-sum = 0
+
+while (count <= uNum *.5 )
+	if (uNum is divisible by count) no remainder of 0 C#=%
+		sum = sum + count
+	end if
+	count = count + 1
+end while
+
+if(sum = uNum)
+	display perfect #
+else
+	display not perfect
+end if
+
+
+CODE:
+
+
+
+
+
+
+2. Modify your solution to the problem above to display all of the perfect numbers between 1 and 1000.  Do this problem in dotnetfiddle.
+
+Input:
+-no input
+Output:
+-just the perfect #'s
+
+
+Algorithm:
+-display instructions
+-number = 1
+do
+	count = 1
+	sum = 0
+	while (count <= uNum *.5 )
+		if (uNum is divisible by count) meaning no remainder of 0 C#=%
+			sum = sum + count
+		end if
+		count = count + 1
+	end while
+
+	if(sum = uNum)
+		display is perfect #
+	end if
+	
+	number = number +1
+while (number <= 1000)
+
+
+
+3. Design and implement a program that asks the user to enter a number and determines if a number entered by the user is a prime number.  
+A prime number is a number that is divisible only by 1 and itself.  2, 3, 5 and 7 are prime numbers.  4 and 9 are not prime numbers.  
+Do this problem in Visual Studio.   
+
+4. Edit your Rock Paper Scissors game from lab 3 to validate the user's input.  When the user enters something other than Rock, Paper or Scissors 
+he/she/they should be forced reenter a choice.  Do this problem in Visual Studio.
+
+Algorithm:
+	display instructions
+	get uChoice
+	generate cChoice
+
+	if (uChoice is equal cChoice)
+		tie
+	else if(uChoice is equal rock and cChoice is equal scissors or
+		uChoice is equal scissors and cChoice is equal  paper or
+		uChoice is equal paper and cChoice is equal rock)
+			display you win
+	else 
+		display cChoice won
+		
+do 
+{
+promot user for RPS
+get uChoice
+}
+while (uchoice != "rock" && uchoice != "paper" && uchoice != "scissors")
+or
+while (uchoice < 1 or uChoice > 3) 
+
+		
+5. Edit your Rock Paper Scissors game from number 4 above to allow the user to play again.  
+The program should keep track of how many times the user wins and the computer wins.  Do this problem in Visual Studio.
+	
+*add play again to code #4
+
+
+6. Design and implement a program that allows the user to play a "Guess My Number" game with the computer.  
+When the game starts the program will generate a random number between 1 and 50.  The user should be prompted to guess the 
+number and to enter a number from the keyboard.  The program will display one of the following messages when the user's 
+guess is incorrect:  "Too high" or "Too low".  The user should be allowed to continue guessing until he/she/they guess correctly.  
+The program should keep track of number of guesses that the user makes and should display the number of guesses along with a 
+congratulatory message at the end of the game.  Do this problem in Visual Studio.  
+

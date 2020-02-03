@@ -1,0 +1,309 @@
+PROBLEM 1
+
+Input:
+	salary
+	years
+
+Process:
+	get salary
+	get years
+	salary >= $40K
+		AND
+	years >= 1 year
+	display
+
+Output:
+	message (yes or no)
+	
+Algorithm:
+	display instructions
+	get salary
+	get years
+		if  salary >= 40000
+				AND
+			years >= 1 year
+				message = you are approved for a loan!
+		else
+			salary >= 40000
+				AND
+			years < 1 year
+				message = "You are not approved for a loan because you have not worked her for a year or longer."
+		else
+			salary < 40000
+				AND
+			years >= 1 year
+				message = ("You are not approved for a loan because your salary is under $40,000.");
+		else
+			salary < 40000
+				AND
+			years < 1 year
+				message = "You are not approved for a loan because your salary is under $40,000 and you have not worked here for atleas a year."
+		
+	{
+		Console.WriteLine("Enter your annual salary and the number of years you have worked at your current job.  I'll determine if you qualify for a loan.");
+
+		Console.Write("Annual salary: ");
+		int salary = int.Parse(Console.ReadLine());  // get the salary
+		
+		Console.Write("Years on the job: ");  // get the years on the job
+		
+		double years = double.Parse(Console.ReadLine());
+		
+		// write an if statement - the logical operator AND is &&
+		if (salary >= 40000 && years >= 1d)
+			Console.Write("You are approved for a loan!");
+		else if
+			(salary >= 40000 && years < 1d)
+			Console.Write("You are not approved for a loan because you have not worked her for a year or longer.");
+		else if
+			(salary < 40000 && years >= 1d)
+			Console.Write("You are not approved for a loan because your salary is under $40,000.");
+		else if
+			(salary < 40000 && years < 1d)
+			Console.Write("You are not approved for a loan because your salary is under $40,000 and you have not worked here for atleas a year.");
+
+	}
+
+PROBLEM 2
+
+Input:
+	rNumber
+	
+Process:
+	get rNumber
+	convert rNumber to dNumber
+	display dNumber
+		
+Output:
+	dNumber
+	
+Algorithm:
+	display instructions
+	get rNumber
+		if rNumber = I
+			dNumber = 1
+		if rNumber - II
+			dNumber = 2
+		if rNumber = III
+			dNumber = 3
+		if rNumber = IV
+			dNumber = 4
+		if rNumber = V
+			dNumber = 5
+		end if
+			display	
+			
+{
+		Console.WriteLine("Enter a roman numeral between I and V and I'll display it's decimal value");
+		
+		Console.Write("Roman Numberal: ");
+		string romanNumeral = Console.ReadLine();
+		int decimalValue;
+		
+		switch (romanNumeral)
+		{
+			// can you change this to work with both upper and lowercase input?
+			case "I":
+				decimalValue = 1;
+				break;
+			case "i":
+				decimalValue = 1;
+				break;
+			case "II":
+				decimalValue = 2;
+				break;
+			case "ii":
+				decimalValue = 2;
+				break;
+			case "III":
+				decimalValue = 3;
+				break;
+			case "iii":
+				decimalValue = 3;
+				break;
+			case "IV":
+				decimalValue = 4;
+				break;
+			case "iv":
+				decimalValue = 4;
+				break;
+			case "V":
+				decimalValue = 5;
+				break;
+			case "v":
+				decimalValue = 5;
+				break;
+			default:
+				decimalValue = 0;
+				break;	
+		}
+		
+		if (decimalValue == 0)
+			Console.WriteLine("Invalid data entry!");
+		else
+			Console.WriteLine("Decimal value: " + decimalValue);
+		
+	}
+			
+				
+	
+PROBLEM 3
+Input:
+	answer
+	
+Process:
+	get answer
+	generate 2 random integers
+	display
+	
+Output:
+	correct answer
+
+Algorithm:
+	display instructions
+	generate 2 random numbers
+	display the 2 random numbers
+	get answer
+	correctAnswer = num1 + num2
+		if answer = correctAnswer
+			message = you have the correct answer
+			display message
+		else
+			message = your answer is incorrect. 
+			display message
+			display correct answer
+		end if 
+		
+		
+        {	
+            Console.WriteLine("Please add these two numbers: ");
+            Random generator = new Random();
+			
+            int firstNumber = generator.Next(1, 1000);
+            int secondNumber = generator.Next(1, 1000);
+			
+            Console.WriteLine(String.Format("{0,5}", firstNumber));
+            Console.WriteLine(String.Format("+{0,4}", secondNumber));
+
+            Console.WriteLine("Your answer: ");
+            int answer = int.Parse(Console.ReadLine());
+            int correctAnswer = firstNumber + secondNumber;
+
+            if (answer == correctAnswer)
+                Console.Write("You have the correct answer!");
+
+            else 
+                Console.Write("The correct answer is " + correctAnswer);
+
+            Console.ReadLine();	
+		}
+
+PROBLEM 4
+
+Input:
+	colorOne
+	colorTwo
+	
+Process:
+	get colorOne
+	get colorTwo
+	get secondaryColor
+	display	
+	
+Output:
+	secondary color
+
+Algorithm:
+	display instructions
+	get colorOne
+	get colorTwo	
+		if (colorOne = red AND colorTwo = yellow) OR
+		   (colorOne = yellow AND colorTwo = red)
+				secondaryColor = Orange
+		
+		if 	(colorOne = red AND colorTwo = blue) OR
+		    (colorOne = blue AND colorTw0 = red)
+				secondaryColor = purple
+		
+		if (colorOne = yellow AND colorTwo = blue) OR
+		   (colorOne = blue AND colorTwo = yellow)
+				secondaryColor = green
+		end if		
+
+
+PROBLEM 5
+
+Input:
+	numQuarters
+	numDimes
+	numNickles
+	numPennies
+	
+Process:
+	calculate numQuarters
+	calculate numDimes
+	calculate numNickles
+	calculate numPennies
+	calculate totalChange
+	display
+	
+Output:	
+	totalChange
+	
+Algorithm:
+	display instructions
+	get numQuarters
+	get numDimes
+	get numNickles
+	get numPennies
+	calculate total
+		if numQuarters + numDimes + numNickles + numPennies == 1 dollar
+			display message 
+		else
+			display total
+
+PROBLEM 6
+Input:
+	rock
+	paper
+	scissor
+Process:
+	get uChoice
+	assign rock to 1
+	assign paper to 2
+	assign scissor to 3
+	get cChoice by generating random number 1-3 
+	display message
+Output:
+	uChoice
+	cChoice
+	display message 
+
+Algorithm:
+	display instructions
+	get uChoice
+	generate cChoice
+	const int rock = 1
+	const int paper = 2
+	const int scissors = 3
+	
+	switch
+		case <uChoice rock>
+			cChoice rock = tie
+			cChoice paper = cCoice win
+			cChoice scissors = uChoice win
+				break;
+		case <uChoice paper>
+			cChoice rock = uChoice win
+			cChoice paper = tie
+			cChoice scissors = cChoice win
+				break;
+		case <uChoice scissors>
+			cChoice rock = cChoice win
+			cChoice paper = uChoice win
+			cChoice scissors = tie
+				break;
+		
+		
+	
+	

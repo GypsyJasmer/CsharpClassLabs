@@ -1,0 +1,549 @@
+The objective of this lab is to introduce you to writing pseudocode as part of the program design process and to creating console apps that use selection (if and switch) statements.  The lab will continue to develop your familiarity with dotnetfiddle.com, a cloud based C# "playground", and Visual Studio, the Integrated Development Environment (IDE) used by most professional C# programmers.
+
+For each problem:
+
+    Create an IPO chart that outlines a general solution to the problem.
+    Do an example calculation that verifies your understanding of the math involved in the solution.  When the problem doesn't include complex math, feel free to skip this step.
+    Use pseudocode to express an algorithm for solving the problem
+    Test your algorithm for correctness.  Include a chart in your work that shows the values that you would use to test and the output you would expect to get given those values.
+    Create a C# console application that implements your solution.  Include your design work (the first 4 bullets) as a comment in your console app.
+    Add your source code to a word processing document or text file.
+
+
+
+In-class students should submit a text file containing:
+
+    Your IPO charts, example calculations, pseudocode, testing and the source code for your main method for each program.
+
+
+
+1. *Design and implement a program that determines if a person qualifies for a loan based on
+    his/her/their annual salary and length of employment at his/her/their current job.
+    In order to qualify a loan you must earn at least $40K per year and have worked at your job for at least 1 year. Do this problem in dotnetfiddle.
+	
+Input:
+double Salary
+double employmentLength
+
+Process:
+displayInstructions
+Get Input
+Verify if the user makes min salary of $40K
+Verify if the user has employmentLength of >= 1 year
+display Output
+
+Output:
+loanQualification message
+
+Algorithm:
+
+	display instructions
+	get salary
+	get years
+		if  salary >= 40000 && years >= 1 year
+
+			message = you are approved for a loan!
+		else
+			message = you don't qualify
+		
+
+Code:
+        static void Main(string[] args)
+        {
+            double salary;
+            double empLength;
+
+            Console.WriteLine("Enter your annual salary and the number of years you have worked at your current job.  I'll determine if you qualify for a loan.");
+
+            Console.Write("Annual salary: ");
+            // get the salary
+            salary = double.Parse(Console.ReadLine());
+
+            Console.Write("Years on the job: ");
+            // get the years on the job
+            empLength = double.Parse(Console.ReadLine());
+
+            // write an if statement - the logical operator AND is &&
+            if (salary >= 40000 && empLength >= 1)
+            {
+                Console.WriteLine("You qualify");
+            }
+            else
+            {
+                Console.WriteLine("You DON'T qualify"); 
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+2. *Design and implement a program that converts Roman Numberals I through V (I, II, III, IV, V) to
+    the equivalent decimal number.  Do this problem in dotnetfiddle.
+	
+Input:
+romanNum = I through V (I, II, III, IV, V)
+
+Process:
+	get rNumber
+	convert rNumber to dNumber
+	display dNumber
+
+Output:
+decimalRomanNum
+
+Algorithm: I did the switch statment in the code because I like switch statments best
+	display instructions
+	get rNumber
+		if rNumber = I
+			dNumber = 1
+		else if rNumber - II
+			dNumber = 2
+		else if rNumber = III
+			dNumber = 3
+		else if rNumber = IV
+			dNumber = 4
+		else if rNumber = V
+			dNumber = 5
+		end if
+			display	
+			
+Code:
+
+        static void Main(string[] args)
+        {
+            string romanNumeral;
+            int decimalValue;
+
+            Console.WriteLine("Enter a roman numeral between I and V and I'll display it's decimal value");
+
+            Console.Write("Roman Numberal: ");
+            romanNumeral = Console.ReadLine();
+
+            romanNumeral = romanNumeral.ToUpper();
+
+            switch (romanNumeral)
+            {
+                // can you change this to work with both upper and lowercase input?
+                case "I":
+                    decimalValue = 1;
+                    Console.WriteLine(decimalValue);
+                    break;
+                case "II":
+                    decimalValue = 2;
+                    Console.WriteLine(decimalValue);
+                    break;
+                case "III":
+                    decimalValue = 3;
+                    Console.WriteLine(decimalValue);
+                    break;
+                case "IV":
+                    decimalValue = 4;
+                    Console.WriteLine(decimalValue);
+                    break;
+                case "V":
+                    decimalValue = 5;
+                    Console.WriteLine(decimalValue);
+                    break;
+                default:
+                    Console.WriteLine("Incorrect Value, please enter a roman numeral between I and V" );
+                    break;
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+3. Design and implement a program that can be used by 2nd grade students to 
+practice addition of up to 3 digit numbers.  The program should generate 2 
+random integers between 10 and 999 and display the 2 numbers to the user.  
+The user should be allowed to enter his/her/their answer to the addition problem.   
+The program should tell the user when his/her/their answer is correct and 
+should display the correct answer when the answer is incorrect.  
+You may edit your solution to problem 6 from lab 2.  
+Do this problem in Visual Studio.   
+
+Input
+-secAnswer
+
+Process
+-dispplay random1
+-display random2
+-get secAnswer
+-calculate correctAns
+-display output
+
+Output
+-right or wrong for secAnswer
+-correctAns
+
+Algorithm:
+	display instructions
+	generate 2 random numbers
+	display the 2 random numbers
+	get answer
+	correctAnswer = num1 + num2
+		if answer = correctAnswer
+			message = you have the correct answer
+			display message
+		else
+			message = your answer is incorrect. 
+			display message
+			display correct answer
+		end if 
+
+Code:
+        static void Main(string[] args)
+        {
+
+            // define variable for answering the math question
+ 
+             int answer, sum, firstRand, secRand;
+
+            //generate random number
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+            firstRand = generator.Next(1, 1000);
+
+            //gernerate random number
+            secRand = generator.Next(1, 1000);
+
+            //display math equestion
+            Console.WriteLine(String.Format("{0,5}", firstRand));
+            Console.WriteLine(String.Format("+{0,4}", secRand));
+
+            //get input of the math answer
+            Console.Write("What is the sum of the equation? ");
+            answer = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            //calculate the sum
+            sum = firstRand + secRand;
+
+            //validate the sum of the equation
+            if (answer == sum)
+            {
+                Console.WriteLine("You have the correct answer");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect Answer. The correct answer is: " +sum);
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+4.    *Design and implement a program that asks the user to enter two of 3 primary colors, red, yellow or blue.  The program should display a message indicating the secondary color that is produced by mixing the two primary colors chosen.  Red + Yellow is Orange, Red + Blue is Purple, Yellow + Blue is Green.  Do this problem in Visual Studio.
+
+
+Input:
+	colorOne
+	colorTwo
+	
+Process:
+	get colorOne
+	get colorTwo
+	get secondaryColor
+	display	
+	
+Output:
+	secondary color
+
+Algorithm:
+	display instructions
+	get colorOne
+	get colorTwo	
+		if (colorOne == red AND colorTwo == yellow) OR
+		   (colorOne == yellow AND colorTwo == red)
+				display secondaryColor = Orange
+		
+		else if (colorOne == red AND colorTwo == blue) OR
+		    (colorOne == blue AND colorTwo == red)
+				display secondaryColor = purple
+		
+		else if (colorOne == yellow AND colorTwo == blue) OR
+		   (colorOne == blue AND colorTwo == yellow)
+				display secondaryColor = green
+				
+		end if	
+		
+Code:
+static void Main(string[] args)
+        {
+
+            // define variable for answering the math question
+            string colorOne, colorTwo;
+
+            Console.WriteLine("We're mixing colors. Please enter two colors: red, yellow, or blue ");
+
+            Console.Write("Color One: ");
+            colorOne = Console.ReadLine();
+
+            Console.Write("Color Two: ");
+            colorTwo = Console.ReadLine();
+
+            colorOne = colorOne.ToLower();
+            colorTwo = colorTwo.ToLower();
+
+            if(colorOne == "red" && colorTwo == "yellow" || 
+                colorOne == "yellow" && colorTwo == "red")
+            {
+                Console.WriteLine("You made Orange");
+            }
+            else if (colorOne == "red" && colorTwo == "blue" ||
+                colorOne == "blue" && colorTwo == "red")
+            {
+                Console.WriteLine("You made Purple");
+            }
+            else if (colorOne == "yellow" && colorTwo == "blue" ||
+                    colorOne == "blue" && colorTwo == "yellow")
+            {
+                Console.WriteLine("You made Green");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input for mixing colors.");
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+	
+
+5.*Design and implement a program that can be used to help a user learn to count change.  
+The program should ask the user to enter the number of quarters, dimes, nickels and pennies he/she/they want to use to make exactly one dollar.  
+The program should display the total value of the change entered by the user and congratulate him/her/them when the value of the change is exactly one dollar.  
+Do this problem in Visual Studio.
+
+Input:
+	numQuarters
+	numDimes
+	numNickles
+	numPennies
+	
+Process:
+	Get Input
+	calculate numQuarters
+	calculate numDimes
+	calculate numNickles
+	calculate numPennies
+	calculate totalChange
+	display totalChange
+	
+Output:	
+	totalChange
+	
+Algorithm:
+	display instructions
+	get numQuarters
+	get numDimes
+	get numNickles
+	get numPennies
+	Calulate numQuarters = numQuarters*25
+	Calulate numDimes = numDimes*10
+	Calulate numNickles = numNickles*5
+	Calulate numPennies = left over
+	calculate total = numQuarters + numDimes + numNickles+ numPennies
+	display total change
+		if (totalChange == 100)
+		{correct you got a dollar}
+		else
+		{display incorrect}
+			
+Code:
+static void Main(string[] args)
+        {
+
+            // define variable for answering the math question
+            int totalChange, quarters, nickels, dimes, pennies;
+
+            //display instructions
+            Console.WriteLine("Total $1.00 please enter how many quarters, dimes, nickels, and pennies you want to total $1.00");
+
+            //input of each varaible
+            Console.Write("Quarters: ");
+            quarters = int.Parse (Console.ReadLine());
+
+            Console.Write("Dimes: ");
+            dimes = int.Parse(Console.ReadLine());
+
+            Console.Write("Nickels: ");
+            nickels = int.Parse(Console.ReadLine());
+
+            Console.Write("Pennies: ");
+            pennies = int.Parse(Console.ReadLine());
+
+
+            //calculate the change
+            quarters = quarters * 25;
+            dimes = dimes * 10;
+            nickels = nickels * 5;
+
+            //calculate total change
+            totalChange = quarters + dimes + nickels + pennies;
+            
+
+            //data validation
+            if (totalChange==100)
+            {
+                Console.Write("You got a dollar, you got a dollar, hey hey hey hey!");
+            }
+            else
+            {
+                Console.Write("You did not get $1.00. You entered: " +totalChange);
+            }
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+6.*Design and implement a program that allows the user to play Rock Paper Scissors (Lizard Spock anyone?)  against the computer.  The user begins by entering either Rock, Paper or Scissors at the keyboard.  The computer's move should be implemented by generating a random number between 1 and 3.  1 = Rock, 2 = Paper, 3 = Scissors.  The program should display the user's move as well as the computer's move AND should display who won.  Do this problem in Visual Studio.  
+uchoice=uchoice.ToLower(); or To.Upper();
+
+HINT: 
+
+const int ROCK = 1; // declares a constant.  It allows you to use the word ROCK in your code rather than a 1.
+if (uChoice == "ROCK" && cChoice == ROCK) // uses the constant. The condition is easier to read and write because of the constant ROCK
+
+Input:
+	uChoice
+	compChoice
+	
+Process:
+	disply instructions
+	get uChoice
+	get cChoice with random 
+	verify tie, win, or draw
+	display outcome
+	
+Output:
+	display outcome
+
+Algorithm:
+	display instructions
+	get uChoice
+	generate cChoice
+
+	
+	switch
+		case <uChoice rock>
+			cChoice rock = tie
+			cChoice paper = cCoice win
+			cChoice scissors = uChoice win
+				break;
+		case <uChoice paper>
+			cChoice rock = uChoice win
+			cChoice paper = tie
+			cChoice scissors = cChoice win
+				break;
+		case <uChoice scissors>
+			cChoice rock = cChoice win
+			cChoice paper = uChoice win
+			cChoice scissors = tie
+				break;
+
+	or if else
+	if (uChoice is equal cChoice)
+		tie
+	else if(uChoice is equal rock and cChoice is equal scissors or
+		uChoice is equal scissors and cChoice is equal  paper or
+		uChoice is equal paper and cChoice is equal rock)
+			display you win
+	else 
+		display cChoice won
+		
+
+Code:
+
+        static void Main(string[] args)
+        {
+
+            // define variable for answering the math question
+            const int ROCK=1, PAPER=2, SCISSORS = 3;
+            int uChoice, cChoice;
+
+            //display instructions
+            Console.WriteLine("We're going to play Rock, Paper, Scissors. " +
+                "You will be playing with a computer and entering 1 for rock, 2 for paper, or 3 for scissors." +
+                "Let's get going");
+
+            //get user choice
+            uChoice = int.Parse(Console.ReadLine());
+
+            //generate random computer choice
+            Random generator = new Random();
+            cChoice = generator.Next(1, 4);
+
+            //displaying what computer picked
+               if(cChoice==ROCK)
+            {
+                Console.WriteLine("Computer picked ROCK " +cChoice);
+            }
+            else if (cChoice==SCISSORS)
+            {
+                Console.WriteLine("Computer picked SCISSORS " +cChoice );
+            }
+            else
+            {
+                Console.WriteLine("Computer picked PAPER " + cChoice);
+            }
+            
+
+
+            //verify tie, win, or draw and display message. 
+            if (uChoice==cChoice)
+            {
+                Console.WriteLine("You tied with the computer");
+            }
+            else if(uChoice==ROCK && cChoice == SCISSORS ||
+                    uChoice==SCISSORS && cChoice==PAPER ||
+                    uChoice==PAPER && cChoice==ROCK)
+            {
+                Console.WriteLine("You won!!");
+            }
+            else
+            {
+                Console.WriteLine("Computer won!!");
+            }
+
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+RPS 
+do 
+{
+promot user for RPS
+get uChoice
+}
+while (uchoice != "rock" && uchoice != "paper" && uchoice != "scissors")
+or
+while (uchoice < 1 or uChoice > 3) 
+
+
+
+
+

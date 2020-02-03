@@ -1,0 +1,396 @@
+
+ 
+ 1.Tempature
+Input(nouns)
+	fTemp
+	
+
+Processing(verbs)
+	Get fTemp
+	Calculate fTemp to cTemp
+	Display cTemp
+
+	
+Output(nouns)
+	cTemp
+	
+/*
+ *Design and implement a program that asks the user to enter a temperature in degrees fahrenheit,
+calculates and displays the same temperature in degrees celsius. c = 5/9 * (f - 32).  Do this problem in dotnetfiddle.
+
+
+*/
+
+namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double fTemp;
+            double cTemp;
+
+            Console.WriteLine("Please enter a temperature in degrees fahrenheit.  I will convert it to degrees celsuis for you.");
+
+            Console.Write("Degrees Fahrenheit: ");
+            // Write a statement that declares a variable f and assigns it to the value entered from the keyboard.  What's an appropriate data type?
+            fTemp = double.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            // Write a statement that declares a variable c and assigns it to results of the expression 5/9 * (f - 32)
+            // When you run it you will not get the right answer.  Remember that an int / int is an int so 5 / 9 is 0.
+            cTemp = 5.0 / 9 * (fTemp - 32);
+
+            // Write a statement that displays an appropriate message to the user as well as the value in the variable c
+            Console.WriteLine("The tempature in celsuis is: " +cTemp.ToString("n1"));
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+2. Kids and Change 
+Input(nouns)
+	price
+	
+	
+Processing(verbs)
+	Get Input
+	Calculate the change (100-price )
+	Calculate quarters (change/25)
+	Calculate dimes (remainder of the step above/25 = answer/10 = dimes)
+	Calculate nickels (remainder of the step above/25 = answer/5 = dimes)
+	Calculate pennies (remainder of the step above/25 = answer/5 = dimes)
+	Display Output
+	
+	
+Output(nouns)
+	change
+	quarters
+	dimes
+	nickels
+	pennies
+	
+namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int price, change, quarters, nickels, dimes, pennies;
+
+            Console.WriteLine("Please enter a price (less than 1 dollar or 100 cents).  I will calculate the change for you.");
+
+            Console.Write("Price: ");
+
+            // Write a statement that declares a variable price and assigns it to the value entered from the keyboard.  What's an appropriate data type?
+            price = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            // Write a statement that declares a variable change and assigns it to the difference between 100 and price
+            change = 100 - price;
+            Console.WriteLine("The total change due is: " + change);
+
+            // Write a statement that declares a variable quarters and assigns it to the change / 25
+            quarters = change / 25;
+
+            // Write a statement that assigns a new value to change based on the number of quarters * 25
+            change = change - quarters * 25;
+
+            // Write a statement that declares a variable dimes and assigns it to the change / 10
+            dimes = change / 10;
+
+            // Write a statement that assigns a new value to change based on the number of dimes * 10
+            change = change - dimes * 10;
+
+            // Write a statement that declares a variable nickels and assigns it to the change / 5
+            nickels = change / 5;
+
+            // Write a statement that assigns a new value to change based on the number of nickels * 5
+            change = change - nickels * 5;
+
+            // Write a statement that declares a variable pennies and assigns it to the value in change
+            pennies = change;
+
+            // Write a statement that displays an appropriate message to the user as well as the value in the variables 
+            
+            Console.WriteLine("Quarters " + quarters);
+            Console.WriteLine("Dimes: " + dimes);
+            Console.WriteLine("Nickels: " + nickels);
+            Console.WriteLine("Pennies: " + pennies);
+
+            // price, change, quarters, dimes, nickels and pennies
+
+
+            Console.ReadLine();
+
+        }
+    }
+}	
+
+	
+
+3. Cookies
+Input(nouns)
+	desiredCookies
+	
+Processing(verbs)
+	Get Input
+	Calculate flour (number of desiredCookies/60 *2.25)
+	Calculate baking soda 
+	Calculate salt
+	Calculate butter
+	Calculate sugar
+	Calculate vanilla
+	Calculate eggs
+	Calculate chocolate
+	Calculate nuts
+	Display Output
+
+	
+Output(nouns)
+	flour
+	baking soda
+	salt
+	butter
+	sugar
+	vanilla
+	eggs
+	chocolate
+	nuts
+	
+	
+namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Write a statement that declares the variable of desired cookies
+            int desiredCookies;
+            double flour, bakingSoda, salt, butter, sugar, brownSugar, vanilla, eggs, chocolate, nuts;
+
+            //ask for how many 
+            Console.WriteLine("How many cookies do you want to make?");
+            Console.Write("Total Cookies: ");
+
+            //Get input from user for desired cookies
+            desiredCookies = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            // Write a statement that declares a variable flour and assigns it to the ....
+            flour = desiredCookies / (60.0 * 2.25);
+
+            // Write a statement that declares a variable Baking Soda and assigns it to the ....
+            bakingSoda = desiredCookies / (60.0 * 1);
+
+            // Write a statement that declares a variable Salt and assigns it to the ....
+            salt= desiredCookies / (60.0 * 1);
+
+            // Write a statement that declares a variable Butter and assigns it to the ....
+            butter = desiredCookies / (60.0 * 1);
+
+            // Write a statement that declares a variable Sugar and assigns it to the ....
+            sugar = desiredCookies / (60.0 * .75);
+
+            //Write a statement that declares a variable Brown Sugar and assigns it to the ....
+            brownSugar = desiredCookies / (60.0 * .75);
+
+            // Write a statement that declares a variable Vanilla and assigns it to the ....
+            vanilla = desiredCookies / (60.0*1);
+
+            // Write a statement that declares a variable Eggs and assigns it to the ....
+            eggs = desiredCookies / (60.0*2);
+
+            // Write a statement that declares a variable Chocolate and assigns it to the ....
+            chocolate = desiredCookies / (60.0 * 2);
+
+            // Write a statement that declares a variable Nuts and assigns it to the ....
+            nuts = desiredCookies / (60.0 * 1);
+
+
+            // Write a statement that displays an appropriate message to the user as well as the value in the variables 
+
+            Console.WriteLine("Cups of Flour " + flour.ToString("n2"));
+            Console.WriteLine("Teaspoons of Baking Soda: " + bakingSoda);
+            Console.WriteLine("Teaspoons of Salt: " + salt);
+            Console.WriteLine("Cups of Butter: " + butter.ToString("n2"));
+            Console.WriteLine("Cups of Sugar: " + sugar.ToString("n2"));
+            Console.WriteLine("Cups of Brown Sugar: " + brownSugar.ToString("n2"));
+            Console.WriteLine("Teaspoons of Vanilla: " + vanilla);
+            Console.WriteLine("Eggs: " + eggs);
+            Console.WriteLine("Cups of Chocolate: " + chocolate.ToString("n2"));
+            Console.WriteLine("Cups of Nuts: " + nuts.ToString("n2"));
+          
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+4.Majors & Classes
+Input(nouns)
+	numMajors
+	totalStudents
+	
+Processing(verbs)
+	Get Input
+	Calculate classPercent(numMajors/totalStudents = classPercent)
+	Display Output
+	
+Output(nouns)
+	classPercent
+
+namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //declare input variable or majors and total students
+            int programMajors, totalStudents;
+            double classPercent;
+    
+
+            //Ask for input
+            Console.Write("How many programming majors are in the classroom?  ");
+            programMajors= int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+
+            Console.Write("How many total students are in the classroom? ");
+            totalStudents = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+
+            //calculate theclassPercent(numMajors/totalStudents = classPercent)
+            classPercent = (double)programMajors / totalStudents;
+
+
+            //Display the the percentage of the class that is majoring in the program
+            Console.WriteLine("The percentage of program majors in the classroom are: " + classPercent.ToString("p"));
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+5.Dollar Convertion
+Input(nouns)
+	usDollar
+	
+	
+Processing(verbs)
+	Get Input
+	Calculate caDollar (usDollar/CA Exchange rate = caDollar)
+	Calculate pesos (usDollar/ Mexican exchange rate = Pesos)
+	Calculate euro (usDollar / Euro exchange rate = euros)
+	Display Output
+	
+Output(nouns)
+	caDollar
+	pesos
+	euro
+
+namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //define money variables
+            double usDollar, caDollar, pesos, euros;
+
+            //get US Dollar input
+            Console.Write("How much US Dollars do you want to covert: ");
+            usDollar = double.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            //Calculate caDollar
+            caDollar = usDollar * 1.3;
+
+            //Calculate Pesos
+            pesos = usDollar * 18.78;
+
+            //Calculate Euros
+            euros = usDollar * 0.9;
+
+            //Display caDollar, Pesos, Euros
+            Console.WriteLine("US Dollar to caDollar is: " + caDollar.ToString("c"));
+            Console.WriteLine("US Dollar to Pesos is: " + pesos.ToString("c"));
+            Console.WriteLine("US Dollar to caDollar is: " + euros.ToString("c"));
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+6. 2nd Grader
+Input(nouns)
+	mathAnswer
+
+	
+Processing(verbs)
+	Generate random numbers
+	Generate random numbers
+	Display mathEquation
+	Get mathAnswer
+	Display sum
+
+	
+Output(nouns)
+	mathEquation
+	sum
+	
+	namespace Lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //define variable for answering the math question
+            int answer, sum, firstRand, secRand;
+
+            //generate random number
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+            firstRand = generator.Next(1, 1000);
+
+            //gernerate random number
+            secRand = generator.Next(1, 1000);
+
+            //display math equestion
+            Console.WriteLine(String.Format("{0,5}", firstRand));
+            Console.WriteLine(String.Format("+{0,4}", secRand));
+
+            //get input of the math answer
+            Console.Write("What is the sum of the equation? ");
+            answer = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            //calculate the sum
+            sum = firstRand + secRand;
+
+            //display the sum of the equation
+            Console.WriteLine("The sum of the answer is:" +sum);
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
