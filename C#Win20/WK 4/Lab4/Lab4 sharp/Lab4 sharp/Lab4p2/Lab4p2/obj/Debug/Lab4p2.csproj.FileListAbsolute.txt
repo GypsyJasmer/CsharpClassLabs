@@ -1,0 +1,7 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\obj\Debug\Lab4p2.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\obj\Debug\Lab4p2.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\bin\Debug\Lab4p2.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\bin\Debug\Lab4p2.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\bin\Debug\Lab4p2.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\obj\Debug\Lab4p2.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 4\Lab4\Lab4 sharp\Lab4 sharp\Lab4p2\Lab4p2\obj\Debug\Lab4p2.pdb

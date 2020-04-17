@@ -1,0 +1,7 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\bin\Debug\5 Lottery.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\bin\Debug\5 Lottery.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\bin\Debug\5 Lottery.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\obj\Debug\5 Lottery.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\obj\Debug\5 Lottery.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\obj\Debug\5 Lottery.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 10\Last Lab\5 Lottery\obj\Debug\5 Lottery.csprojAssemblyReference.cache

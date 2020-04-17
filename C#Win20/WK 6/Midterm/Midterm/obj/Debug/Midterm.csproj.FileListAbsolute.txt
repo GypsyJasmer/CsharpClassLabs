@@ -1,0 +1,7 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\obj\Debug\Midterm.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\obj\Debug\Midterm.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\bin\Debug\Midterm.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\bin\Debug\Midterm.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\bin\Debug\Midterm.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\obj\Debug\Midterm.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 6\Midterm\Midterm\obj\Debug\Midterm.pdb

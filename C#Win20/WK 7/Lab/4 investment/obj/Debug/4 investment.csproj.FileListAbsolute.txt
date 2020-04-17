@@ -1,0 +1,10 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\obj\Debug\4 investment.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\obj\Debug\4 investment.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\bin\Debug\4 investment.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\bin\Debug\4 investment.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\bin\Debug\4 investment.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\bin\Debug\UsefulStuff.dll
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\bin\Debug\UsefulStuff.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\obj\Debug\4 investment.csproj.CopyComplete
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\obj\Debug\4 investment.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\4 investment\obj\Debug\4 investment.pdb

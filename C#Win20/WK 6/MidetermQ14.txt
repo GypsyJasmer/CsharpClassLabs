@@ -1,0 +1,58 @@
+
+Question #14
+
+Code:
+        static void Main(string[] args)
+        {
+            decimal originalPrice, salePrice, discountAmount;
+            double discountPercent = 0;
+            int saleCode;
+
+            //display instructions
+            Console.WriteLine("Let's figure out the discount you'll be getting! " +
+                "You'll enter the original price and a sale code number of 1 - 4");
+            
+            //getting inputs
+            Console.Write("Please enter the original price of the item: ");
+            originalPrice = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Please enter the sale code number: ");
+            saleCode = int.Parse(Console.ReadLine());
+
+            //determine discountPercent
+            if (saleCode==1)
+            {
+                discountPercent = 0.5;
+            }
+            else if (saleCode==2)
+            {
+                discountPercent = 0.4;
+            }
+            else if (saleCode == 3)
+            {
+                discountPercent = 0.33;
+            }
+            else if (saleCode == 4)
+            {
+                discountPercent = 0.25;
+            }
+
+            //calculate discountAmount
+            discountAmount = originalPrice * (decimal)discountPercent;
+
+            //calculate salePrice
+            salePrice = originalPrice - discountAmount;
+
+
+            //display discountAmount & salePrice
+            Console.WriteLine("The discount amount is: " +discountAmount.ToString("c"));
+
+            Console.WriteLine("The sale price is: " + salePrice.ToString("c"));
+
+            Console.ReadLine();
+
+
+
+        }
+    }
+}

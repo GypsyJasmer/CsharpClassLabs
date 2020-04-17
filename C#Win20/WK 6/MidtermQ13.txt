@@ -1,0 +1,40 @@
+Question #13
+
+Input:
+	int length
+	int width 
+
+Process:
+	display instructions for inputs needed
+	get inputs
+	calculate square footage = length * width
+	verify sqFootage
+	Calculate weeklyFee
+	calculate seasonalFee
+
+Output:
+	weeklyFee
+	seasonalFee
+	*you dont have to output this but you can show the sqFootage too
+	
+
+
+Algorithm:
+	Display Instructions
+	Get Input
+	Calculate sqFootage = length * width
+	Display sqFootage
+	
+	if (sqFootage>4000)
+		Display weeklyFee=$25.00
+		Display seasonalFee = $25.00*32 wks
+		
+	else if (sqFootage>4000 and sqFootage<6000)
+		Display weeklyFee=$35.00
+		Display seasonalFee = $35.00*32 wks
+	
+	else
+		Display weeklyFee=$50.00
+		Display seasonalFee = $50.00*32 wks
+	end if
+	

@@ -1,0 +1,7 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\obj\Debug\2 Car Loan.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\obj\Debug\2 Car Loan.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\bin\Debug\Notes.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\bin\Debug\Notes.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\bin\Debug\Notes.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\obj\Debug\Notes.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Notes\obj\Debug\Notes.pdb

@@ -1,0 +1,28 @@
+Input:
+	accNum
+	begBalance
+	charges
+	credits
+	limit
+
+Process:
+	Display Instructions
+	Get Input
+	calculate newBalance
+	display newBalance
+	display cMessage when limit is exceeded 
+	
+
+Output:
+	newBalance
+	cMessage
+
+Algorithm:
+	Display Instructions
+	get Input
+	newBalance = begBalance + charges - credits 
+	display newBalance
+	if (newBalance>limit)
+		disaply message
+	end if
+	

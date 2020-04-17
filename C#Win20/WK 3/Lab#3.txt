@@ -21,6 +21,7 @@ In-class students should submit a text file containing:
     his/her/their annual salary and length of employment at his/her/their current job.
     In order to qualify a loan you must earn at least $40K per year and have worked at your job for at least 1 year. Do this problem in dotnetfiddle.
 	
+
 Input:
 double Salary
 double employmentLength
@@ -34,6 +35,9 @@ display Output
 
 Output:
 loanQualification message
+
+
+
 
 Algorithm:
 

@@ -1,0 +1,10 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\obj\Debug\5 Dice.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\obj\Debug\5 Dice.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\bin\Debug\5 Dice.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\bin\Debug\5 Dice.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\bin\Debug\5 Dice.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\bin\Debug\UsefulStuff.dll
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\bin\Debug\UsefulStuff.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\obj\Debug\5 Dice.csproj.CopyComplete
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\obj\Debug\5 Dice.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\5 Dice\obj\Debug\5 Dice.pdb

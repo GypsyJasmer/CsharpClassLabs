@@ -1,0 +1,10 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\obj\Debug\6 Pig.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\obj\Debug\6 Pig.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\bin\Debug\6 Pig.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\bin\Debug\6 Pig.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\bin\Debug\6 Pig.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\bin\Debug\UsefulStuff.dll
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\bin\Debug\UsefulStuff.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\obj\Debug\6 Pig.csproj.CopyComplete
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\obj\Debug\6 Pig.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\6 Pig\obj\Debug\6 Pig.pdb

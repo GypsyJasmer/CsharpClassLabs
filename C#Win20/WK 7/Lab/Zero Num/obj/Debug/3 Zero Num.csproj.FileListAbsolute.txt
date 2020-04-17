@@ -1,0 +1,10 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\obj\Debug\3 Zero Num.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\obj\Debug\3 Zero Num.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\bin\Debug\Zero Num.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\bin\Debug\Zero Num.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\bin\Debug\Zero Num.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\bin\Debug\UsefulStuff.dll
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\bin\Debug\UsefulStuff.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\obj\Debug\3 Zero Num.csproj.CopyComplete
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\obj\Debug\Zero Num.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Zero Num\obj\Debug\Zero Num.pdb

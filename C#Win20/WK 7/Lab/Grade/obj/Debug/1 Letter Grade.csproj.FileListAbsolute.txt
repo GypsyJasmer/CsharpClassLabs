@@ -1,0 +1,14 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\bin\Debug\Grade.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\bin\Debug\Grade.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\bin\Debug\Grade.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\obj\Debug\1 Letter Grade.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\obj\Debug\1 Letter Grade.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\obj\Debug\Grade.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Notes\Grade\obj\Debug\Grade.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\bin\Debug\Grade.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\bin\Debug\Grade.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\bin\Debug\Grade.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\obj\Debug\1 Letter Grade.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\obj\Debug\1 Letter Grade.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\obj\Debug\Grade.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 7\Lab\Grade\obj\Debug\Grade.pdb

@@ -1,0 +1,417 @@
+Calling #1-3
+// #1
+                SuffleArray(scores);
+                for (int i = 0; i < scores.Length; i++)
+                {
+                    Console.WriteLine("Shuffle Array: " + scores[i]);
+                }
+
+                // #2
+                IndexOfElement(scores);
+                for (int i = 0; i < scores.Length; i++)
+                {
+                    Console.WriteLine("Index of min: " + scores[i]);
+                }
+
+
+                // #3
+                int index = IndexOfLinear(scores, numScores, 77);
+                Console.WriteLine("The index of 77 is: " + index);
+
+
+1.Using the Visual Studio Solution containing the example program from class (and the screen casts) as a starting point, 
+add a method that shuffles an array of integers.  The method should take an array of integers and the number of elements 
+in the array as parameters.  It does not directly return a value BUT the array is a reference type.  Changes made to the 
+array inside the method are reflected in the calling code.  An algorithm for shuffling is provided as a comment in the VS solution.  
+Add a call to the method followed by a call to DisplayScores in main.
+
+    Visual Studio Solution:  https://drive.google.com/open?id=1fe9DP-raDCEs0uM6mQioNcmXiSLOY8b9
+
+    MAC Visual Studio Solution:  https://drive.google.com/open?id=16aaXh7EF_SCjjDyiik1E6MITvbPKERLv
+	
+CODE/Methods:
+	
+ static void SuffleArray(int[] scores)
+        {
+            Random rndIndex = new Random();
+
+            for (int i = 0; i < scores.Length; i++)
+            {
+                Swap(scores, i, i + rndIndex.Next(scores.Length - i));
+            }
+
+
+        }
+        //swap element in the current index w/ the element at the random index
+        static void Swap(int[] scores, int a, int b)
+        {
+            int temp = scores[a];
+            scores[a] = scores[b];
+            scores[b] = temp;
+        }
+
+_________________________________________________________________________________________________________________________________________________
+2. Using the Visual Studio Solution containing the example program from class (and the screen casts) as a starting point, 
+add a method that uses selection sort to sort an array of integers.  The method should take an array of integers and the number of elements 
+in the array as parameters.  It does not directly return a value BUT the array is a reference type.  Changes made to the array 
+inside the method are reflected in the calling code.  An algorithm for selection sort (as well as a link to a description of selection sort) 
+is provided as a comment in the VS solution.  Add a call to the method followed by a call to DisplayScores in main.
+
+ static void IndexOfElement(int[] scores)
+        {
+            //int indexOfMin = 1;
+            int tmp;
+            for (int i = 0; i < (scores.Length - 1); i++)
+            {
+                int indexOfMin = i;
+
+                for (int j = i + 1; j < scores.Length; j++)
+                {
+                    if (scores[j] < scores[indexOfMin])
+                    {
+                        indexOfMin = j;
+                    }
+
+                }
+                if (indexOfMin != i)
+                {
+                    tmp = scores[indexOfMin];
+                    scores[indexOfMin] = scores[i];
+                    scores[i] = tmp;
+                }
+
+            }
+
+
+        }
+
+_________________________________________________________________________________________________________________________________________________
+3. Using the Visual Studio Solution containing the example program from class (and the screen casts) as a starting point, 
+add two methods that find a number in an array of integers and return the index of the number.  The first method should do a 
+linear search and should be called IndexOfLinear.  The second method should do a binary search and should be called IndexOfBinary.  
+Both methods should take an array of integers, the number of elements in the array and the number to search for as parameters.  
+Both methods return an integer that represents the index of the number in the array.  The methods should return -1 when the number doesn't 
+exist in the array.  An algorithm for implementing a binary search (as well as a link to a description of binary search) is provided as a 
+comment in the VS solution.  Add a call to each method followed by a call to DisplayScores in main.
+
+	static int IndexOfLinear(int[] scores, int numScores, int search)
+        {
+            int indexOfSearch = -1;
+            for (int i = 0; i < numScores && indexOfSearch == -1; i++)
+            {
+                if (scores[i] == search)
+                    indexOfSearch = i;
+            }
+            return indexOfSearch;
+        }
+
+        static int IndexOfBinary(int[] scores, int numScores, int search)
+        {
+            int first = 0; //first array element
+            int last = scores.Length - 1; //last array element
+            int middle; //midpoint of the search
+            int position = -1; //position of search value
+
+            bool found = false; //Flag
+
+
+            while (!found && first <= last)
+            {
+                middle = (first + last) / 2; //calculate midpoint
+                if (scores[middle] == search) //if value is found at mid
+                {
+                    found = true;
+                    position = middle;
+                }
+
+                else if (scores[middle] > search) //if value is in the lower half
+                {
+                    last = middle - 1;
+                }
+                else
+                {
+                    first = middle + 1; //if value is in the upper half
+                }
+            }
+
+    
+            return search;
+        }
+
+_________________________________________________________________________________________________________________________________________________
+4. Design and implement a program that simulates Magic 8-Ball.  The Magic 8-Ball is a plastic sphere made to look like an eight-ball, 
+that is used for fortune-telling or seeking advice.  The program should allow a user to enter a question from the keyboard.  
+The program should respond to the question by selecting one of 20 pre-programmed responses.  The user should be allowed to ask questions 
+repeatedly in one program run.
+
+        static void Main(string[] args)
+        {
+            string question;
+
+            int answer; //answer is the 8 ball's replay to user's questions. 
+
+            //string array of the 8 ball responses
+            string[] response ={"I see it, yes." , "Ask again later.", "Better not tell you now.", "Cannot predict now." , " Concentrate and ask again.",
+                "Don’t count on it.", "It is certain." , " It is decidedly so.", "Most likely.", "My reply is no.", " My sources say no.", "Outlook not so good.", "Outlook good.",
+                "Reply hazy, try again.", " Signs point to yes.", "Very doubtful.", " Without a doubt.", "Yes.", " Yes – definitely.","You may rely on it." };
+
+            Console.WriteLine("Ask a yes or no question and I will tell you your future. You can ask as many questions as you want and to stop type stop");
+            question = Console.ReadLine();
+            Random generator = new Random();
+
+            while (question != "stop")
+            {
+                answer = generator.Next(0, response.Length);
+                Console.WriteLine(response[answer]);
+
+                //asks the user for another question until they type stop. 
+                Console.WriteLine("Ask a yes or no question and I will tell you your future. You can ask as many questions as you want and to stop type stop");
+                question = Console.ReadLine();
+
+            }
+
+            Console.ReadLine();
+        }
+
+
+_________________________________________________________________________________________________________________________________________________
+5. Design and implement a program that simulates a lottery.  The user should be asked to enter 5 integers between 1 and 69 and an 
+addition integer between 1 and 26.  The computer will generate random numbers, 5 between 1 and 69 and 1 between 1 and 26, for the 
+winning lottery ticket.  The program should display the winning lottery ticket as well as the user's results.  The image at the right 
+gives the possible prizes.
+
+    A structure chart for a possible solution can be found at:  https://drive.google.com/open?id=1Y4AKijZq4cnVUXWqNXxn1gTtjaA0jzdo
+	using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5_winningTicket
+{
+    class Program
+    {
+        //Global const
+        const int SIZE = 6;
+        const int MIN = 1;
+        const int MAX = 70;
+        const int PB_INDEX = 5;
+        const int PB_MIN = 1;
+        const int PB_MAX = 27;
+
+        static void Main(string[] args)
+        {
+
+            int[] winningTicket; //winning array ticket
+            int[] userTicket; //user loto numbers array ticket
+            int matches, pbMatches;
+            string prize;
+
+
+            winningTicket = new int[SIZE]; //dynamic memory new array to the heap
+            userTicket = new int[SIZE]; //dynamic memory new array
+
+            GetWinningTicket(winningTicket);
+            //DisplayTicket(userTicket, winningTicket);
+            Console.WriteLine(); //space in the results shown
+            GetTicket(userTicket);
+            DisplayTicket(userTicket, winningTicket);
+            Console.WriteLine(); //space in the results shown
+            matches = CountMatches(userTicket, winningTicket);
+
+            //check PB_INdex for the powerball number match and then totaling matches
+            if (winningTicket[PB_INDEX] == userTicket[PB_INDEX])
+            {
+                pbMatches = 1;
+            }
+            else
+            {
+                pbMatches = 0;
+            }
+            //displays the matches of the userticket and the winning ticket with PB kicker being the extra match
+            Console.Write("Matches: " + matches);
+            Console.WriteLine(); //space in the results shown
+            Console.Write("PowerBall/Kicker Match: " + pbMatches);
+            Console.WriteLine(); //space in the results shown
+
+
+            //Prizes outlined
+            prize = GetTicketValue(matches, pbMatches);
+            DisplayResults(prize);
+
+
+            Console.ReadLine();
+        }// end Main
+
+        //computer ticket that is one array of 6 inedx = 0-4 are filled w/ rand 1-69 index =5 is filled with rand 1-26 we will return the winning ticket array
+        static void GetWinningTicket(int[] winningTicket)
+        {
+            int winningTicketNum = 0;
+            Random rand = new Random();
+
+            //or i<winningTicket.length
+            for (int i = 0; i < PB_INDEX; i++)
+            {
+                winningTicketNum = rand.Next(MIN, MAX);
+                winningTicket[i] += winningTicketNum;
+
+                //Console.WriteLine(winningTicketNum);
+
+            }
+
+            winningTicket[PB_INDEX] = rand.Next(PB_MIN, PB_MAX);
+
+
+
+        }
+
+
+        //called in GetTicket only
+        static void GetTicket(int[] userTicket)
+        {
+
+            for (int i = 0; i < SIZE - 1; i++)
+            {
+                Console.Write("Enter 5 lottery numbers between 1 and 69: ");
+                userTicket[i] = int.Parse(Console.ReadLine());
+
+            }
+
+            Console.Write("Enter 5 lottery numbers between 1 and 26: ");
+            userTicket[PB_INDEX] = int.Parse(Console.ReadLine());
+
+        }
+
+        static void DisplayTicket(int[] userTicket, int[] winningTicket)
+        {
+            Console.Write("Your Ticket is: ");
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                Console.Write(userTicket[i] + " ");
+            }
+
+            Console.WriteLine(); //space in the results shown
+
+            Console.Write("Your winning ticket is: ");
+            for (int i = 0; i < SIZE; i++)
+            {
+                Console.Write(winningTicket[i] + " ");
+            }
+        }
+        //counts the total matches between userTicket ticket vs winning ticket up to index 5 Powerball number is compared in main
+        static int CountMatches(int[] userTicket, int[] winningTicket)
+        {
+            int matches = 0;
+
+            for (int i = 0; i < SIZE - 1; i++)
+            {
+                int valueFromUserTicket = userTicket[i];
+                if (HasNumber(winningTicket, valueFromUserTicket))
+                {
+                    matches++;
+                }
+            }
+
+            return matches;
+        }
+
+        //does the bool linera search that says yes or number if numbers are in both arrays 
+        static bool HasNumber(int[] winningTicket, int valueFromUserTicket)
+        {
+
+            //foreach (int numInWin in winningTicket)
+            for (int i = 0; i < SIZE - 1; i++)
+            {
+                int numInWin = winningTicket[i];
+                if (valueFromUserTicket == numInWin)
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+
+        static string GetTicketValue(int matches, int pbMatches)
+        {
+            string prize="";
+
+            //$4 prize
+            if (matches == 0 && pbMatches == 1 || matches == 1 && pbMatches == 1 )
+            {
+                prize = "prize1";
+            }
+
+            //$7 prize
+            else if (matches == 2 && pbMatches == 1 || matches == 3 && pbMatches == 0)
+            {
+                prize = "prize2";
+            }
+
+            //$100 prize
+            else if (matches == 3 && pbMatches == 1|| matches == 4 && pbMatches == 0)
+            {
+                prize = "prize3";
+            }
+
+            //$50K prize
+            else if (matches == 4 && pbMatches == 1)
+            {
+                prize = "prize4";
+            }
+ 
+            //$100K prize
+            else if (matches == 5 && pbMatches == 0)
+            {
+                prize = "prize5";
+            }
+
+            //biggest winner Jackpot
+            else if (matches == 5 && pbMatches == 1)
+            {
+                prize = "jackpot";
+            }
+
+            return prize;
+
+        }
+
+        static void DisplayResults(string prize)
+        {
+                switch (prize)
+            {
+                case "prize1":
+                    Console.WriteLine("You won $4.00");
+                    break;
+                case "prize2":
+                    Console.WriteLine("You won $7.00");
+                    break;
+                case "prize3":
+                    Console.WriteLine("You won $100.00");
+                    break;
+                case "prize4":
+                    Console.WriteLine("You won $50,000");
+                    break;
+                case "prize5":
+                    Console.WriteLine("You won $100,000");
+                    break;
+                case "jackpot":
+                    Console.WriteLine("You won the $1,000,000 JACKPOT!!!!!!!!!!!!");
+                    break;
+                default:
+                    Console.WriteLine("Sorry you are not a winner");
+                    break;
+            }
+
+
+        }
+
+
+    }
+
+}
+
+
+_________________________________________________________________________________________________________________________________________________

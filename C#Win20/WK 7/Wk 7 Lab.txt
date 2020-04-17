@@ -1,0 +1,809 @@
+Play Again Class Library
+
+namespace UsefulStuff
+{
+    public static class PlayAgain
+    {
+        public static bool DoPlayAgain()
+        {
+            string repeat;
+
+            do
+            {
+                Console.WriteLine("Would you like to go again? PLease enter y or n. ");
+
+                repeat = Console.ReadLine();
+                repeat = repeat.ToLower(); //to read into at lower case
+
+                if (repeat != "y" && repeat != "n") //while not yes or not keep looping. 
+                {
+                    Console.WriteLine("Incorrect option please enter y or n");
+                }
+            } while (repeat != "y" && repeat != "n");
+
+            return repeat == "y"; //return yes if they want to pay again otherwise no need because play again is over. 
+        }
+    }
+}
+
+
+__________________________________________________________________________________________________________________________________________________
+
+1. Design and implement a program that asks the user to enter 3 quiz scores (out of 50), 
+calculates and displays the average score and the average percentage as well as a letter grade. 
+>= 90 is an A, between 80 and 90 is a B, between 70 and 80 is a C, below 70 is an F.  
+The program should display an error message and allow the user to reenter any scores that are not whole numbers between 0 and 50.
+
+Input:
+	score1
+	score2
+	score3
+Process: 
+	get score1, score2, score3
+	calculate averageScore
+	calculate averagePercentage
+	determine letterGrade
+	display results
+	
+Output:
+	averageScore
+	averagePercentage
+	letterGrade
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Prob_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int score1, score2, score3;
+            string letterGrade;
+            double aveScore, avePerctent;
+
+            //calling GetScore and input to score
+            score1 = GetScore();
+            score2 = GetScore();
+            score3 = GetScore();
+
+            //math for the aveScore & avePercent to get the letterGrade 
+            aveScore = (score1 + score2 + score3) / 3.0;
+            avePerctent = aveScore / 50 * 100;
+
+            //calling method DetermineLetterGrade and assigning the returned variable letterGrade
+            letterGrade = DetermineLetterGrade(avePerctent);
+            Console.WriteLine(letterGrade);
+
+
+            Console.ReadLine();
+
+        }
+
+        static int GetScore()
+        {
+            // these are local variables
+            // their scope is the method GetScore
+            // they can only be used in this method
+            bool isInt = false;
+            int score;
+            do
+            {
+                Console.Write("Please enter the score between 0-50: ");
+                string input = Console.ReadLine();
+                isInt = int.TryParse(input, out score);
+            } while (!(isInt && score >= 0 && score <= 50));
+
+            // allows you to get a value out of a method
+            // datatype must be an int
+            return score;
+        }
+
+        static string DetermineLetterGrade(double avePercent)
+        {
+            string letterGrade;
+
+            if (avePercent >= 90.0)
+            {
+                letterGrade = "A";
+            }
+            else if (avePercent >= 80.0)
+            {
+                letterGrade = "B";
+            }
+            else if (avePercent >= 70.0)
+            {
+                letterGrade = "C";
+            }
+            else
+            {
+                letterGrade = "F";
+            }
+
+            return letterGrade;
+
+        }
+    }
+}
+
+__________________________________________________________________________________________________________________________________________________
+
+
+
+	
+/* 	2. Design and implement a program that can be used to provide users with information about the 
+    monthly payment for a car loan.  The program should allow a user to enter the amount of the loan 
+    and the annual interest rate.  The program should validate data entered by the user in a reasonable 
+    way and should force the user to reenter until the data is correct.  The program should display 
+    the monthly payment for a 4 year loan, a 5 year loan and a 6 year loan in an attractively formatted table.  
+    The formula for calculating the payment is given at the right. 
+
+        HINT:  Math.Pow can be used for exponentiation in C#.  double fourSquared = Math.Pow( 4, 2);  for example.
+
+    *GetLoanAmount
+        retun decimal loanAmount
+    *GetInterestRate
+        return double interestRate
+
+    int months=years*12
+
+    *CalcPayment (loanAmount, interestRate, years)
+
+    payment=
+        (rate per period * loan amount)
+        math.Pow(1-(1+rate per period) - months)
+        return decimal monthPayment
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GrossPay
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter your loan amount and your interest rate and I will caclucate your monthly payments for 48, 60, and 72 months.");
+
+            double loanAmount = GetLoanAmount();
+            double interestRate = GetInterestRate();
+
+            Console.WriteLine("The Payment on you 48 month loan will be: " + CalcPayment(loanAmount, interestRate, 4) .ToString("C"));
+            Console.WriteLine("The Payment on you 60 month loan will be: " + CalcPayment(loanAmount, interestRate, 5).ToString("C"));
+            Console.WriteLine("The Payment on you 72 month loan will be: " + CalcPayment(loanAmount, interestRate, 6).ToString("C"));
+           
+
+            Console.ReadLine();
+        }
+        static double GetLoanAmount()
+        {
+            bool isDoub = false;
+            double loanAmount;
+            do
+            {
+                Console.Write("Please enter your loan amount that is $1,000.00 or more: ");
+                string input = Console.ReadLine();
+                isDoub = double.TryParse(input, out loanAmount);
+            } while (!(isDoub && loanAmount>=1000) );
+
+            return loanAmount;
+        }
+
+        static double GetInterestRate()
+        {
+            bool isDoub = false;
+            double interestRate;
+            do
+            {
+                Console.Write("Please enter your interest ratebetween 0%-20%: ");
+                string input = Console.ReadLine();
+                isDoub = double.TryParse(input, out interestRate);
+            } while (!(isDoub && interestRate > 0 && interestRate<=20));
+
+            //return the total term interest rate
+            return interestRate;
+
+        }
+
+        static decimal CalcPayment(double loanAmount, double interestRate, double loanTerm)
+        {
+            loanTerm *= 12; //loanTerm=loanTerm*12
+            double monthlyInterest = interestRate / 12 * .01; //this assumes 10% w/ .01
+            
+            //math from Mari for payment. 
+            double payment = (monthlyInterest * loanAmount) / (1 - Math.Pow((1 + monthlyInterest),  -loanTerm));
+	        
+                
+            return (decimal) payment;
+
+        }
+    }
+}
+__________________________________________________________________________________________________________________________________________________	
+
+3. Design and implement a program that asks the user to enter a non-zero positive number and determines 
+if a number entered by the user is a prime number.  A prime number is a number that is divisible only by 
+1 and itself.  2, 3, 5 and 7 are prime numbers.  4 and 9 are not prime numbers.  The program should validate 
+the input in a reasonable way.  The program should ask the user if he/she/they want to check another number 
+after the result has been displayed and should repeat the process as long as the user enters yes.
+Methods:
+    -GetInt
+    -IsPrime
+    -Display?
+    -PlayAgain
+
+*/
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UsefulStuff;
+
+namespace Zero_Num
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+
+            do
+            {
+                number = GetPosInts();
+                Result(number);
+                Console.ReadLine();
+
+
+            } while (PlayAgain.DoPlayAgain());
+        }
+
+        static int GetPosInts()
+        {
+            bool isInt = false;
+            int number;
+            do
+            {
+                Console.Write("Please enter a positive whole number: ");
+                string input = Console.ReadLine();
+                isInt = int.TryParse(input, out number);
+            } while (!(isInt && number > 0));
+
+            return number;
+        }
+
+        static void Result(int number)
+        {
+            int count = 0;
+            //for loop to validate if the number is prime //funtion is prime
+            for (int i = 1; i <= number; i++)
+            {
+                if (number % i == 0)
+                {
+                    count++;
+
+                }
+            }
+                if (count == 2)
+                {
+                    Console.WriteLine(number + " is a prime number.");
+                }
+                else
+                {
+                    Console.WriteLine(number + " is NOT a prime number.");
+                }
+
+          
+        }
+
+     
+
+        
+    }
+}
+
+
+__________________________________________________________________________________________________________________________________________________
+
+4. Design and implement a program that allows the user to calculate the future value of an investment.  
+The program should allow the user to enter the present value of the investment, the annual interest rate and the length of the investment.  
+The program should validate the input in a reasonable way.  The program should display the future value of the investment and allow the 
+user to enter a new set of data and repeat the process.
+
+
+Input:
+    Current investment
+    annual interest
+    term of investment
+Output:
+    investment amount
+
+ Process:
+    Calc investment (needs current investment, interest, and term)
+    Display invesment (needs the total paid after investment term and the term)
+ */
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UsefulStuff;
+
+namespace _4_investment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            do //loop to play again. 
+            {
+                double investment = GetInvestmentAmount();
+                double interest = GetAnnualInerest();
+                double term = GetTermOfInvestment();
+                double money = CalculateInvestment(investment, interest, term);
+                DisplayInvestment(money, term);
+
+
+
+
+            } while (PlayAgain.DoPlayAgain());
+        }
+
+
+        //gets the amount the user will invest or want to could change to double
+        static double GetInvestmentAmount()
+        {
+            bool isDoub = false;
+            double investment=0;
+            do
+            {
+                Console.Write("How much will you be investing: ");
+                string input = Console.ReadLine();
+                isDoub = double.TryParse(input, out investment);
+            } while (!(isDoub && investment > 0));
+
+            return investment;
+
+        }
+
+        //gets the interest rate for the investment //decimanl? 
+        static double GetAnnualInerest()
+        {
+            bool isDoub = false;
+            double interest;
+            do
+            {
+                Console.Write("How much is the interest on your investment:  ");
+                string input = Console.ReadLine();
+                isDoub = double.TryParse(input, out interest);
+            } while (!(isDoub && interest > 0));
+
+            return interest;
+        }
+
+        //gets how long the invest will be in years to mautre
+        static double GetTermOfInvestment()
+        {
+            bool isDoub = false;
+            double term;
+            do
+            {
+                Console.Write("How many years is your investment: ");
+                string input = Console.ReadLine();
+                isDoub = double.TryParse(input, out term);
+            } while (!(isDoub && term > 0));
+
+            return term;
+
+        }
+
+        //calculate investment but not diaplying only the math
+        static double CalculateInvestment(double investment, double interest, double term)
+        {
+            //Total interest will calculate how much interest is paid over the full investment period
+            double totalInterest = interest * term;
+
+            //This calculate how much the investment will be after the total interest of the term and investment
+            double money = investment * totalInterest;
+
+            return money; //return money so money can be passed into display. 
+        }
+
+        //called to display the calculations of the investment
+        static void DisplayInvestment(double money, double term)
+        {
+            //change the double to decimal show the 
+
+            Console.WriteLine("The total income you will make in " + term + " years will be: " + money.ToString("C"));
+        }
+
+    }
+}
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________________
+
+5. Design and implement an application that allows the user to play a simple dice game.  
+The game begins by allowing the user to pick a number between 2 and 12 (the possible sum of 2 dice).  
+The computer will then roll 2 dice up to 3 times.  If the number chosen by the user comes up, the user wins and the game ends.  
+If the number does not come up within 3 tries, the computer wins.  After the game has completed the program should allow the user to play again.  
+The program should keep track of how many times the user wins and the computer wins.  
+
+    Here's a structure chart for my solution:  https://drive.google.com/open?id=1De0qQO4ZVRvx7Lgm6qx8DjHj6bo55WwK
+	
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UsefulStuff;
+
+namespace _5_Dice
+{
+    class Program
+    {
+        //global const
+        const int USERWON=1;
+        const int COMPUTERWON=2;
+        const int MIN = 2;
+        const int MAX = 12;
+
+        static void Main(string[] args)
+        {
+            //local varaibles
+            int userWins = 0;
+            int computerWins = 0;
+            int uNum, d1, d2, winner;
+
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+
+            do//loop to play again. 
+            {
+                uNum = GetInt("The total of two dice" , MIN, MAX);
+                int compRand=PlayGame(uNum, out d1, out d2, generator);
+                winner = DeterminWinner(uNum, compRand);
+                IncrementScores(winner, ref userWins, ref computerWins);
+                DisplayWinner(winner); //Mari's says pass ing userWins & ComputerWins
+
+
+                
+
+            } while (PlayAgain.DoPlayAgain());
+
+
+            Console.ReadLine();
+        }
+
+        //Min and max const and returning users number
+        static int GetInt(string label, int MIN, int MAX)
+        {
+            bool isInt = false;
+            int uNum = MIN- 1;
+            do
+            {
+                Console.Write(String.Format("Please enter a whole number between {0} and {1} for {2}: ", MIN, MAX, label));
+                string input = Console.ReadLine();
+                isInt = int.TryParse(input, out uNum);
+            } while (!(isInt && uNum >= MIN && uNum <= MAX));
+
+            return uNum;
+        }
+
+        //play game 
+        static int PlayGame(int uNum, out int d1, out int d2, Random generator)
+        {
+            int rolls = 0;
+            
+            do
+            {
+                d1 = generator.Next(1, 7);
+                d2 = generator.Next(1, 7);
+
+                //increment rolls
+                rolls++;
+
+                //display rolls, d1 & d2
+                Console.WriteLine("Roll # " + rolls);
+                Console.WriteLine("Dice 1 rolled: " + d1);
+                Console.WriteLine("Dice 2 rolled: " + d2);
+
+            } while (rolls < 3 && d1 + d2 != uNum);
+
+            int compRand = d1 + d2;
+            return compRand;
+        }
+
+
+        //sees if computer or user won
+        static int DeterminWinner(int uNum, int compRand)
+        {
+            // who won
+            if (uNum == compRand)
+            {
+                return USERWON;
+            }
+            else
+            {
+                return COMPUTERWON;
+            }
+
+            
+        }
+
+        static void DisplayWinner(int winner)
+        {
+            // who won
+            if (winner==USERWON)
+            {
+                Console.WriteLine("YOU win!!");
+            }
+            else
+            {
+                Console.WriteLine("COMPUTER wins!!");
+            }
+
+        }
+
+        // This method takes in as parameters winner, userWins and computerWins.
+        // Because userWins and computerWins are altered by method, they're reference parameters rather than value parameters.
+        // C# uses the keyword ref to indicate a reference parameter (out can be used too)
+        // C# requires ref before the parameter in both the declaration and the call
+        static void IncrementScores(int winner, ref int userWins, ref int computerWins)
+        {
+            if (winner == USERWON)
+                userWins++;
+            else if (winner == COMPUTERWON)
+                computerWins++;
+        }
+
+
+    }
+}
+
+
+__________________________________________________________________________________________________________________________________________________
+
+6. Design and implement a program that allows the user to play a version of the dice game Pig against the computer.  
+The object of the game is to be the first to score 100 points.  The user and the computer take turns rolling a pair of dice following these rules:
+
+            On a turn each player rolls 2 dice.  If no 1 appears, the total of the dice is added to the player's score and the 
+			player can choose to roll again or pass the turn to the other player.  When it the computer does not roll a 1, 
+			decide if the computer wants to roll again by generating a random number between 1 and 2.  1 causes the computer to roll again.  
+			2 causes the computer to pass.
+			
+				If a 1 appears on one of the dice, nothing is added to the player's score and the player's turn is over.
+
+				If a 1 appears on both dice, the player's score is reset to 0 and the player's turn is over.
+
+				Here's a structure chart for my solution:  https://drive.google.com/open?id=153wAfFxeETTyyHLpnpupoMhSEMoV_ggL
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UsefulStuff;
+
+
+namespace _6_Pig
+{
+    class Program
+    {
+        //global const
+        const int USER = 1;
+        const int COMPUTER = 2;
+        const int WINNING_SCORE= 25;
+
+        static void Main(string[] args)
+        {
+
+
+            int userScore = 0, computerScore = 0;
+            int winner;
+           
+
+            Console.WriteLine("Let's Play Pig!");
+            Console.WriteLine();
+
+            do
+            {
+                TimingStuff.Pause();
+                UserPlay(ref userScore);
+                Console.WriteLine();
+                if (userScore < WINNING_SCORE)
+                {
+                    TimingStuff.Pause();
+                    ComputerPlay(ref computerScore);
+                    Console.WriteLine();
+                }
+            } while (userScore < WINNING_SCORE && computerScore < WINNING_SCORE);
+
+            TimingStuff.Pause();
+            Console.WriteLine();
+            winner = DetermineWinner(userScore, computerScore);
+            DisplayResults(winner, userScore, computerScore);
+
+            Console.ReadLine();
+
+        }
+
+        //in/out userScore 
+        static void UserPlay(ref int userScore)
+        {
+            //do while with Playagain? return string
+            //in/out userScore ref
+            //calls Play Again and play again isn't called in Main
+
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+            int d1, d2;
+            bool playAgain;
+
+
+            do {
+                playAgain = false;
+
+                //d1 & d2 random number between 1-6
+                d1 = generator.Next(1, 7);
+                d2 = generator.Next(1, 7);
+
+                //display rolls, d1 & d2
+                Console.WriteLine("Dice 1 rolled: " + d1);
+                Console.WriteLine("Dice 2 rolled: " + d2);
+
+                //conditions
+                //no 1's rolled 
+                if(d1!=1 && d2!=1)
+                {
+                    userScore += (d1 + d2);
+                    Console.WriteLine("Your score is " + userScore);
+                    playAgain=PlayAgain.DoPlayAgain();
+                }
+                //if user didn't win ask to roll again
+                else if(d1==1 && d2==1)
+                {
+                    userScore = 0;      
+                    Console.WriteLine("Your score is " + userScore);
+
+                }
+                //display that it's now the computer's turn
+                else
+                {
+                    Console.WriteLine("Your score is " + userScore);
+                    //display that it's now the computer's turn
+                    Console.WriteLine("It's the computers turn");
+                }
+
+                 } while (playAgain==true);
+        }
+
+        //in/out computerScore 
+        static void ComputerPlay(ref int comptuerScore)
+        {
+
+            //in/out comptuerScore ref
+            //calls computer playAgain (seperate function) that is a random die that rolls a 1 or two. 
+
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+            int d1, d2;
+            bool playAgain;
+
+
+            do
+            {
+                playAgain = false;
+
+                //d1 & d2 random number between 1-6
+                d1 = generator.Next(1, 7);
+                d2 = generator.Next(1, 7);
+
+                //display rolls, d1 & d2
+                Console.WriteLine("Dice 1 rolled: " + d1);
+                Console.WriteLine("Dice 2 rolled: " + d2);
+
+                //conditions
+                //no 1's rolled 
+                if (d1 != 1 && d2 != 1)
+                {
+                    comptuerScore += (d1 + d2);
+                    Console.WriteLine("The computer's score is " + comptuerScore);
+                    playAgain = GetCompPlayAgain();
+                }
+                //if user didn't win ask to roll again
+                else if (d1 == 1&& d2 == 1)
+                {
+                    comptuerScore = 0;
+                    Console.WriteLine("The computer's score is " + comptuerScore);
+
+                }
+                //display that it's now the computer's turn
+                else
+                {
+                    Console.WriteLine("The computer's score is " + comptuerScore);
+                    //display that it's now the computer's turn
+                    Console.WriteLine("It's the users turn");
+                }
+
+            } while (playAgain == true);
+
+        }
+
+        //in userScore, in computerScore, return winner
+        static int DetermineWinner(int userScore, int computerScore)
+        {
+
+            int winner;
+
+            if(userScore>computerScore)
+            {
+                winner = USER;
+            }
+            else
+            {
+                winner = COMPUTER;
+            }
+
+            return winner;
+        }
+
+        //in winner, userScore, compScore
+        static void DisplayResults(int winner, int userScore, int computerScore)
+        {
+            if(winner==USER)
+            {
+                Console.WriteLine("You won with  " + userScore + " score");
+            }
+            else
+            {
+                Console.WriteLine("Computer is the winner with " + computerScore+ " score");
+            }
+        }
+
+        static bool GetCompPlayAgain()
+        {
+            // creates an object called generator that can generate a random number
+            Random generator = new Random();
+
+            int d3;
+
+            //d1 & d2 random number between 1-6
+            d3 = generator.Next(1, 3);
+
+                if (d3==1) 
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+        }
+    }
+}
+
+	

@@ -1,0 +1,7 @@
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\bin\Debug\4 Magic 8_Ball.exe.config
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\bin\Debug\4 Magic 8_Ball.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\bin\Debug\4 Magic 8_Ball.pdb
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\obj\Debug\4 Magic 8_Ball.csprojAssemblyReference.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\obj\Debug\4 Magic 8_Ball.csproj.CoreCompileInputs.cache
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\obj\Debug\4 Magic 8_Ball.exe
+C:\Users\sandi\Desktop\Classes\Winter 2020\C#Win20\WK 9\TestScoresStart\4 Magic 8_Ball\obj\Debug\4 Magic 8_Ball.pdb
